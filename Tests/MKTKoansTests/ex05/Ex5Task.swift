@@ -9,8 +9,11 @@ import MKTUtils
  */
 
 struct LazyProperty {
-    let value : Int = 0
+    private let initializer : () -> Int
+
+    lazy var value : Int = self.initializer()
 
     init(_ initializer:@escaping () -> Int) {
+        self.initializer = initializer
     }
 }
