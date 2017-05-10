@@ -9,6 +9,7 @@ struct Test {
         return (testList?.data ?? "").lines
             .filter{ $0.contains(test) }
             .filter{ !$0.hasPrefix("warning:") }
+            .filter{ !$0.hasPrefix("Linking") }
     }
 
     static func run(_ test:String) -> ProcessValue? {
