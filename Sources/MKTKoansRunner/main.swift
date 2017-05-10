@@ -2,25 +2,25 @@ import Foundation
 import Rainbow
 
 Stage.steps = [
-    "master": ".",
-    "ex00": "Ex00Tests",
-    "ex01": "Ex01Tests",
-    "ex02": "Ex02Tests",
-    "ex03": "Ex03Tests",
-    "ex04": "Ex04Tests",
-    "ex05": "Ex05Tests",
-    "ex06": "Ex06Tests",
-    "ex07": "Ex07Tests",
-    "ex08": "Ex08Tests",
-    "ex09": "Ex09Tests",
-    "ex10": "Ex10Tests",
-    "ex11": "Ex11Tests",
-    "ex12": "Ex12Tests",
-    "ex13": "Ex13Tests",
-    "ex14": "Ex14Tests",
-    "ex15": "Ex15Tests",
-    "completed": "."
- ]
+    ("master", "."),
+    ("ex00", "Ex00Tests"),
+    ("ex01", "Ex01Tests"),
+    ("ex02", "Ex02Tests"),
+    ("ex03", "Ex03Tests"),
+    ("ex04", "Ex04Tests"),
+    ("ex05", "Ex05Tests"),
+    ("ex06", "Ex06Tests"),
+    ("ex07", "Ex07Tests"),
+    ("ex08", "Ex08Tests"),
+    ("ex09", "Ex09Tests"),
+    ("ex10", "Ex10Tests"),
+    ("ex11", "Ex11Tests"),
+    ("ex12", "Ex12Tests"),
+    ("ex13", "Ex13Tests"),
+    ("ex14", "Ex14Tests"),
+    ("ex15", "Ex15Tests"),
+    ("completed", ".")
+]
 
 func command() -> String? {
     if CommandLine.arguments.count < 3 {
@@ -43,6 +43,7 @@ case "current"? :
     if let current = Stage.current() {
         print(" \u{2728} " + " Current step is \(current)")
     }
+
 case "run"?:
     let stage = Stage.currentTest()
     let build = Test.list(stage)
