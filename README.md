@@ -3,6 +3,22 @@
 The Koans walk you along the path to enlightenment in order to learn Swift! The goal is to learn the language,
 it's basic and specific concepts through syntax, common functions and libraries.
 
+## Install Koans
+
+First clone this repository.
+
+```sh
+$ git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
+```
+
+Then chetch all branches.
+
+```sh
+$ for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
+   git branch --track ${branch#remotes/origin/} $branch
+done
+```
+
 ## Building Koans
 
 Since this Koans is designed in Swift it's compilation can easily done using Swift
