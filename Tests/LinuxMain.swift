@@ -12,5 +12,6 @@ XCTMain([
     testCase(Ex07Tests.allTests),
     testCase(Ex08Tests.allTests),
     testCase(Ex09Tests.allTests),
-    testCase(Ex10Tests.allTests)
+    testCase(Ex10Tests.allTests),
+    testCase(Ex11Tests.allTests)
 ])

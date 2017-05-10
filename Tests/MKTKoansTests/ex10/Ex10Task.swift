@@ -13,3 +13,10 @@ import MKTUtils
  * A position is valid if posX => 0 and posY >=0
 */
 
+extension Position {
+  var isValid : Bool {
+      get {
+          return self.posX >= 0 && self.posY >= 0
+      }
+  }
+}
