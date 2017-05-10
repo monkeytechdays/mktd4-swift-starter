@@ -11,7 +11,7 @@ First clone this repository.
 git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
 ```
 
-Then chetch all branches.
+Then fetch all branches.
 
 ```sh
 for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
