@@ -8,13 +8,13 @@ it's basic and specific concepts through syntax, common functions and libraries.
 First clone this repository.
 
 ```sh
-$ git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
+git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
 ```
 
 Then chetch all branches.
 
 ```sh
-$ for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
+for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
    git branch --track ${branch#remotes/origin/} $branch
 done
 ```
