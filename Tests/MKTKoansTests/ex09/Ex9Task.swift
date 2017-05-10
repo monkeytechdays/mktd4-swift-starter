@@ -18,7 +18,14 @@ import MKTUtils
  * other -> null
  */
 func findMoveUsingInt(_ value:Int) throws -> Direction? {
-    return try Todo()
+    switch (value) {
+    case 0: return .NORTH
+    case 1...2: return .SOUTH
+    case 3: return .WEST
+    case 4: return .EAST
+    case 5...6: return .NONE
+    default: return nil
+    }
 }
 
 /**
@@ -31,5 +38,8 @@ func findMoveUsingInt(_ value:Int) throws -> Direction? {
  }
 
 func eval(_ expr: Expr) throws -> Int {
-    return try Todo()
+    switch (expr) {
+    case .Num(let value): return value
+    case .Sum(let left, let right): return try eval(left) + eval(right)
+    }
 }

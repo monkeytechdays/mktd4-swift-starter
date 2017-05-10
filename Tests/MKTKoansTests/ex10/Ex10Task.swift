@@ -12,4 +12,3 @@ import MKTUtils
  * Add HERE a property isValid to the class Position
  * A position is valid if posX => 0 and posY >=0
 */
-
