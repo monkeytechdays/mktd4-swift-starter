@@ -7,13 +7,13 @@ it's basic and specific concepts through syntax, common functions and libraries.
 
 First clone this repository.
 
-```sh
+```
 git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
 ```
 
 Then fetch all branches.
 
-```sh
+```
 for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
    git branch --track ${branch#remotes/origin/} $branch
 done
@@ -55,6 +55,16 @@ This command let's you
 - `run` tests
 - goto `next` step
 - `end` exercises
+
+First run in `master` ...
+
+```
+$ ./bin/koans run
+ ✅  [1/1] MKTKoansTests.TautologyTests/testTautology 
+ 💖  Congratulations all tests passed - ready for the next step?
+```
+
+Now it's time to learn! 
 
 ## License
 
