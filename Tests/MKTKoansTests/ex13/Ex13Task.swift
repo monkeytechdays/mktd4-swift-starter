@@ -11,14 +11,14 @@ import MKTUtils
   * Create an empty Dictionary
   */
 func getEmptyDictionaryOfScores() throws -> [String:Int] {
-    return try Todo()
+    return [String:Int]()
 }
 
 /**
  * Filter a dictionary selecting scores in a given range
  */
 func getScoresInRange(_ scores:[String:Int], _ range:ClosedRange<Int>) throws -> [(key:String,value:Int)] {
-    return try Todo()
+    return scores.filter{ (key,value) in range.contains(value) }
 }
 
 /**
@@ -26,7 +26,11 @@ func getScoresInRange(_ scores:[String:Int], _ range:ClosedRange<Int>) throws ->
  */
 extension Array {
     func dictionary<K: Hashable, V>() throws -> [K: V] where Element == Dictionary<K, V>.Element {
-        return try Todo()
+        var dictionary = [K: V]()
+        for element in self {
+            dictionary[element.key] = element.value
+        }
+        return dictionary
     }
 }
 
@@ -34,5 +38,5 @@ extension Array {
  * Filter a dictionnary selecting scores in a given range
  */
 func getDictionaryScoresInRange(_ scores:[String:Int], _ range:ClosedRange<Int>) throws -> [String:Int] {
-    return try Todo()
+    return try scores.filter{ (key,value) in range.contains(value) }.dictionary()
 }
