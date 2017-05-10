@@ -11,15 +11,19 @@ import MKTUtils
  * return the player score or 0 using one line syntax and if operator
  */
 func getPlayerScoreUsingIf(_ player: Player?) throws -> Int {
-    return try Todo()
+    if let score = player?.score {
+        return score
+    }
+
+    return 0
 }
 
 /**
  * return the player score or 0 using one line syntax and elvis operator
  */
 func getPlayerScoreUsingElvis(_ player: Player?) throws -> Int {
-    return try Todo()
-    }
+    return player?.score ?? 0
+}
 
 class UnwrapError : Error {}
 
@@ -28,12 +32,16 @@ class UnwrapError : Error {}
  */
  @discardableResult
 func trustMeAndReturnScore(_ player: Player?) throws -> Int {
-    return try Todo()
+    if let score = player?.score {
+        return score;
+    }
+
+    throw UnwrapError()
 }
 
 /**
  * Cast the @param arg to Int and return its value or 0 if it's not an Int
  */
 func anyToInt(_ arg: Any?) throws -> Int {
-     return try Todo()
+    return arg as? Int ?? 0
 }
