@@ -36,8 +36,14 @@ case "start"? :
         print(" \u{2728} " + " Starting koans")
     }
 case "previous"? :
-    if let branch = Stage.previous() {
-        print(" \u{2728} " + " previous step is \(branch)")
+    if let result = Stage.previous() {
+        if result.status != 0 {
+            print(result.data ?? "")
+            print(result.error ?? "")
+            print(" \u{1F601} " + " Cannot switch to previous step")
+        } else {
+            print(" \u{2728} " + " Previous step is \(Stage.current()!)")
+        }
     }
 case "current"? :
     if let current = Stage.current() {
@@ -70,8 +76,14 @@ case "run"?:
     }
     print(" \u{1F496}  Congratulations all tests passed \u{1F496} ".yellow.bold)
 case "next"? :
-    if let branch = Stage.next() {
-        print(" \u{2728} " + " Next step is \(branch)")
+    if let result = Stage.next() {
+        if result.status != 0 {
+            print(result.data ?? "")
+            print(result.error ?? "")
+            print(" \u{1F601} " + " Cannot switch to next step")
+        } else {
+            print(" \u{2728} " + " Next step is \(Stage.current()!)")
+        }
     }
 case "end"? :
     if let current = Git.changeBranch("completed") {
