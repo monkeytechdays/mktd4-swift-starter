@@ -10,14 +10,14 @@ import MKTCore
  * Return the Integer [0]
  */
 func shouldReturn0() throws -> Int {
-    return try Todo()
+    return 0
 }
 
 /**
  * Return the Integer [0] if isNull is false, [nil] otherwise
  */
 func shouldReturn0OrNil(isNull:Bool) throws -> Int? {
-    return try Todo()
+    return isNull ? nil : 0
 }
 
 /**
@@ -26,7 +26,7 @@ func shouldReturn0OrNil(isNull:Bool) throws -> Int? {
  * section Strings and Characters
  */
 func shouldReturnStringOK() throws ->  String {
-    return try Todo()
+    return "OK"
 }
 
 /**
@@ -35,14 +35,14 @@ func shouldReturnStringOK() throws ->  String {
  * section Strings and Characters
  */
 func shouldReturnCharacterO() throws ->  Character {
-    return try Todo()
+    return "O"
 }
 
 /**
  * Return a pair [(0,"1")]
  */
 func shouldReturnPair() throws -> (Int, String) {
-    return try Todo()
+    return (0,"1")
 }
 
 /**
@@ -51,7 +51,7 @@ func shouldReturnPair() throws -> (Int, String) {
  * section Tuple
  */
  func shouldReturnPairFirst(_ p:(Int,String)) throws -> Int {
-    return try Todo()
+     return p.0
  }
 
  /**
@@ -60,5 +60,5 @@ func shouldReturnPair() throws -> (Int, String) {
   * section Tuple
   */
 func shouldReturnPairSecond(_ p:(Int,String)) throws -> String {
-    return try Todo()
+  return p.1
 }
