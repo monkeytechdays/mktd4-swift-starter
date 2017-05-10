@@ -10,7 +10,9 @@ import MKTCore
  */
 func shouldInitializeMutableProperty() throws -> Int {
     /* Create a variable equal to 2 and modify it to 3 */
-    return try Todo()
+    var a = 2
+    a = 3
+    return a
 }
 
 /**
@@ -18,8 +20,11 @@ func shouldInitializeMutableProperty() throws -> Int {
  */
 func shouldInitializeImmutableProperty() throws -> Int {
     /* Try to create a constant equal to 2 and modify it to 3 */
-    return try Todo()
+    let a = 2
+    // a = 3 won't compile
+    return a
 }
+
 
 /**
  * Read about Getters and Setters
@@ -31,9 +36,28 @@ struct Position : Equatable {
     private var _posX : Int
     private var _posY : Int
 
-    var posX : Int = 0
+    var posX : Int {
+        get {
+            return self._posX
+        }
+        set(v) {
+            if v >= 0 {
+                self._posX = v
+            } else {
+                self._posX = -1
+            }
+        }
+    }
 
-    var posY : Int = 0
+    var posY : Int {
+        get {
+            if self._posY >= 0 {
+                return self._posY
+            } else {
+                return -1
+            }
+        }
+    }
 
     init(_ x: Int, _ y: Int) {
         self._posX = x
@@ -63,5 +87,6 @@ struct Pair<L,R> {
  * Add a specific method returning a pair
  */
 func shouldReturnPairOfIdAndName(_ position: Position) throws -> Pair<Int, Int> {
-    return try Todo()
+    let (posX, posY) = position.tuple()
+    return Pair(posX, posY)
 }
