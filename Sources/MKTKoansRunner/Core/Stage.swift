@@ -12,7 +12,8 @@ class Stage {
         }
 
         if let index = steps.index(where: { $0.0 == current }), index + 1 < steps.count {
-            return Git.changeBranch(steps[index + 1].0)?.data
+            Git.changeBranch(steps[index + 1].0)
+            return current()
         }
 
         return nil
@@ -25,7 +26,8 @@ class Stage {
         }
 
         if let index = steps.index(where: { $0.0 == current }), index > 0 {
-            return Git.changeBranch(steps[index - 1].0)?.data
+            Git.changeBranch(steps[index - 1].0)
+            return current()
         }
 
         return nil
