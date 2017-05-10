@@ -41,7 +41,7 @@ $
 
 As mentioned a binary `.build/debug/MKTKoansRunner` is available.
 
-## Run Koans
+## Running Koans
 
  ```sh
 $ ./bin/koans
