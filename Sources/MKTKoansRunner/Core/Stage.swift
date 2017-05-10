@@ -5,27 +5,27 @@ class Stage {
         return Git.currentBranch()?.data
     }
 
-    static func next() -> String? {
+    static func next() -> ProcessValue? {
         guard let current = Stage.current()
         else {
             return nil
         }
 
         if let index = steps.index(where: { $0.0 == current }), index + 1 < steps.count {
-            return Git.changeBranch(steps[index + 1].1)?.data
+            return Git.changeBranch(steps[index + 1].0)
         }
 
         return nil
     }
 
-    static func previous() -> String? {
+    static func previous() -> ProcessValue? {
         guard let current = Stage.current()
         else {
             return nil
         }
 
         if let index = steps.index(where: { $0.0 == current }), index > 0 {
-            return Git.changeBranch(steps[index - 1].1)?.data
+            return Git.changeBranch(steps[index - 1].0)
         }
 
         return nil
