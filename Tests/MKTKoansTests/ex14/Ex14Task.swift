@@ -10,6 +10,12 @@ import MKTUtils
 /**
  * Create a player from a valid  dictionary ["id":Int,"name":String]; nil otherwise
  */
-func createPlayerFromDictionary(_ dictionnary: [String:Any]) throws -> Player? {
-    return try Todo()
+func createPlayerFromDictionary(_ dictionary: [String:Any]) throws -> Player? {
+    guard let id = dictionary["id"] as? Int,
+          let name = dictionary["name"] as? String
+    else {
+        return nil
+    }
+
+    return Player(id,name,nil)
 }
