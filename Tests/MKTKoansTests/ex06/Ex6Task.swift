@@ -1,5 +1,4 @@
 import MKTCore
-import MKTUtils
 
 /**
  * Exercise 6: Arguments, Default, Named
@@ -11,12 +10,12 @@ import MKTUtils
  * Complete the function to use default arguments value.
  */
 func joinOptions(_ options: [String], prefix:String="", separator:String=", ", postfix:String="") throws -> String {
-    return try Todo()
+    return "\(prefix)\(options.joined(separator:separator))\(postfix)"
 }
 
 /**
  * Write the previous function to use var arguments.
  */
 func joinVarArgsOptions(_ options: String..., prefix:String="", separator:String=", ", postfix:String="") throws -> String {
-    return try Todo()
+    return try joinOptions(options, prefix:prefix, separator:separator, postfix:postfix)
 }
