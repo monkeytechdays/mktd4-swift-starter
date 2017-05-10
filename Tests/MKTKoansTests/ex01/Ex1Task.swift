@@ -29,10 +29,19 @@ import MKTCore
  * }
  */
 
+struct TestPlayer : Equatable {
+    let id : Int
+    let name : String
+}
+
 /**
  * Task 2:
  * Add Equatable capability to the struct Player
  */
+
+func ==(lhs: TestPlayer, rhs: TestPlayer) -> Bool {
+    return lhs.id == rhs.id && lhs.name == rhs.name
+}
 
 /**
  * Task 3:
@@ -48,4 +57,8 @@ enum Direction : String {
     case WEST = "W"
     case EAST = "E"
     case NONE = "O"
+
+    static func from(_ value: String) -> Direction? {
+        return Direction(rawValue:value)
+    }
 }
