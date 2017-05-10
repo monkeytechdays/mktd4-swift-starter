@@ -44,7 +44,17 @@ case "current"? :
         print(" \u{2728} " + " Current step is \(current)")
     }
 case "run"?:
-    let tests = Test.list(Stage.currentTest())
+    let stage = Stage.currentTest()
+    let build = Test.list(stage)
+
+    if build?.status != 0 {
+        print(build?.data ?? "")
+        print(build?.error ?? "")
+        print(" \u{1F633}  build is broken".red)
+        exit(1);
+    }
+
+    let tests = Test.list(stage, build)
     for (index,test) in tests.enumerated() {
         let result = Test.run(test)
 

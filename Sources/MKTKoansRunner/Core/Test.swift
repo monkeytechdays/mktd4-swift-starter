@@ -1,8 +1,12 @@
 struct Test {
     static let binary = "/usr/bin/swift"
 
-    static func list(_ test:String) -> [String] {
-        return (Runner.execute(binary, "test", "-l")?.data ?? "").lines
+    static func list(_ test:String) -> ProcessValue? {
+        return Runner.execute(binary, "test", "-l")
+    }
+
+    static func list(_ test:String, _ testList:ProcessValue?) -> [String] {
+        return (testList?.data ?? "").lines
             .filter{ $0.contains(test) }
             .filter{ !$0.hasPrefix("warning:") }
     }
