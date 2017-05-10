@@ -22,12 +22,20 @@ typealias NANException = FormatException
  */
 @discardableResult
 func parseInt(_ value: String) throws -> Int {
-    return try Todo()
+    if let int =  Int(value) {
+        return int
+    } else {
+        throw NANException()
+    }
 }
 
 /**
  * Complete the parseInt with an alternative
  */
 func parseInt(_ value: String, otherwise:Int) throws -> Int {
-    return try Todo()
+    do {
+        return try parseInt(value)
+    } catch is NANException {
+        return otherwise
+    }
 }
