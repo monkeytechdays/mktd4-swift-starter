@@ -67,7 +67,7 @@ case "run"?:
             print(" \u{2705}" + "  [\(index+1)/\(tests.count)]".blue.bold + " \(test) ")
         }
     }
-    print(" \u{1F496}  Congratulations all tests passed - ready for the next step?".yellow.bold)
+    print(" \u{1F496}  Congratulations all tests passed \u{1F496} ".yellow.bold)
 case "next"? :
     if let branch = Stage.next() {
         print(" \u{2728} " + " Next step is \(branch)")
