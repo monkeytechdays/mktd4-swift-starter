@@ -11,55 +11,55 @@ import MKTUtils
  * Create an empty set
  */
 func getEmptySetOfPlayers() throws -> Set<Player> {
-    return try Todo()
+    return Set<Player>()
 }
 
 /**
  * Create an empty array
  */
 func getEmptyListOfPlayers() throws -> [Player] {
-    return try Todo()
+    return [Player]()
 }
 /**
  * Filter players with score different from 0.
  */
 func getPlayersWithScore0(_ players: [Player]) throws -> [Player] {
-    return try Todo()
+    return players.filter{ $0.score != 0 }
 }
 
 /**
  * Return true if all players have a score not null
  */
 func checkAllPlayersHaveAScore(_ players: [Player]) throws -> Bool {
-    return try Todo()
+    return !players.contains(where:{ $0.score == nil })
 }
 
 /**
  * Return true if there is at least one player with the score 10
  */
 func checkContainsPlayerWithScore10(_ players: [Player]) throws -> Bool {
-    return try Todo()
+    return players.contains(where: { $0.score == 10 })
 }
 
 /**
  * Return the number of players with the score 20
  */
 func countPlayersWithScore20(_ players: [Player]) throws -> Int {
-    return try Todo()
+    return players.filter{ $0.score == 20 }.count
 }
 
 /**
  * Return the first player with the score @param score, or null if there is none
  */
 func findAnyPlayerWithScore(_ players: [Player], _ score: Int) throws -> Player? {
-    return try Todo()
+    return players.first(where: { $0.score == score })
 }
 
 /**
  * Return the players names without using for or while
  */
 func getPlayersNames(_ players: [Player]) throws -> [String] {
-    return try Todo()
+    return players.map { $0.name }
 }
 
 struct Game {
@@ -70,5 +70,5 @@ struct Game {
  * Return the players names  from games without using for or while
  */
 func getAllPlayers(_ games: [Game]) throws -> [Player] {
-    return try Todo()
+    return games.flatMap { $0.players }
 }
