@@ -9,30 +9,32 @@ import MKTCore
  * Initialize an mutable property.
  */
 func shouldInitializeMutableProperty() throws -> Int {
-    /* Create a variable equal to 2 and modify it to 3 */
-    return try Todo()
+    /* Create a variable 'a' equal to 2 and modify it to 3 */
+    return try Todo() // Return value of 'a'
 }
 
 /**
  * Initialize an immutable property.
  */
 func shouldInitializeImmutableProperty() throws -> Int {
-    /* Try to create a constant equal to 2 and modify it to 3 */
-    return try Todo()
+    /* Try to create a constant 'a' equal to 2 and modify it to 3 */
+    return try Todo() // Return value of 'a'
 }
 
 /**
  * Read about Getters and Setters
- *
- * Add a custom setter for posX to expose posX as an Integer >=0 if _posX >=0 or -1
- * Add a custom getter for posY to expose posY as an Integer >=0 if _posY >=0 or -1
+ * Read about https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html
  */
 struct Position : Equatable {
     private var _posX : Int
     private var _posY : Int
 
-    var posX : Int = 0
+    // TODO Add a custom setter for posX to update _posX as an Integer >=0 (use -1 is setter value < 0)
+    //      the getter should return the _posX
+    var posX : Int = 0 
 
+    // TODO Add a custom getter for posY to expose posY as an Integer >=0 (use -1 is _poxY < 0)
+    //      the setter should set the _posY
     var posY : Int = 0
 
     init(_ x: Int, _ y: Int) {
@@ -62,6 +64,6 @@ struct Pair<L,R> {
 /**
  * Add a specific method returning a pair
  */
-func shouldReturnPairOfIdAndName(_ position: Position) throws -> Pair<Int, Int> {
+func shouldReturnPairOfPosXAndPosY(_ position: Position) throws -> Pair<Int, Int> {
     return try Todo()
 }
