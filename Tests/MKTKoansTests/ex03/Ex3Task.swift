@@ -8,23 +8,26 @@ import MKTUtils
  */
 
 /**
- * return the player score or 0 using one line syntax and if operator
+ * return the player score or 0 using one line syntax and if operator (optional binding)
  */
 func getPlayerScoreUsingIf(_ player: Player?) throws -> Int {
     return try Todo()
 }
 
 /**
- * return the player score or 0 using one line syntax and elvis operator
+ * return the player score or 0 using one line syntax with elvis operators (optional chaining and coalescing operator)
  */
 func getPlayerScoreUsingElvis(_ player: Player?) throws -> Int {
     return try Todo()
-    }
+}
 
 class UnwrapError : Error {}
 
 /**
+ * Maybe your convinced that the player exists, and he have a score. (unconditional unwrapping)
  * return the player score.
+ * Note: this is dangerous !
+ *       you may throw an UnwrapError
  */
  @discardableResult
 func trustMeAndReturnScore(_ player: Player?) throws -> Int {
