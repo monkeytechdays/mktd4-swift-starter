@@ -5,7 +5,7 @@ import MKTUtils
 class Ex04Tests: XCTestCase {
 
     func test00ShouldReturnLorem() throws {
-        try XCTAssertEqual(getLoremIpsum(), "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.")
+        try XCTAssertEqual(getLoremIpsum(), "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus.\nSuspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.")
     }
 
     func test01ShouldReturnPlayerScore() throws {

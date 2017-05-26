@@ -9,8 +9,8 @@ import MKTUtils
 
 /**
  * returns
- *     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
- *     "Sed non risus. "
+ *     "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+ *     "Sed non risus."
  *     "Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
  *
  * using 1 line per sentence
@@ -22,7 +22,7 @@ func getLoremIpsum() throws -> String {
 }
 
 /**
- * Return the string "The score for %playerName% is %playerScore%
+ * Return the string "The score for %playerName% is %playerScore%"
  * return 0 for score if score is null
  */
 func getPlayerScoreAsString(_ player: Player) throws -> String {
