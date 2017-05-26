@@ -3,9 +3,7 @@ import MKTUtils
 
 /**
  * Exercise 11: Operator Overloading
- *
- * Read about <a href="https://kotlinlang.org/docs/reference/operator-overloading.html">Operator overloading</a>
- *
+ * Read about https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AdvancedOperators.html
  */
 
 /**
