@@ -7,14 +7,14 @@ it's basic and specific concepts through syntax, common functions and libraries.
 
 First clone this repository.
 
-```
+```sh
 git clone https://github.com/monkeytechdays/mktd4-swift-starter.git 
 ```
 
 Then fetch all branches.
 
-```
-for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
+```sh
+for branch in `git branch -a --no-color | grep remotes | grep -v HEAD | grep -v master `; do
    git branch --track ${branch#remotes/origin/} $branch
 done
 ```
@@ -24,7 +24,7 @@ done
 Since this Koans is designed in Swift it's compilation can easily done using Swift
 command.
 
-```js
+```sh
 $ swift build
 Fetching https://github.com/onevcat/Rainbow
 Cloning https://github.com/onevcat/Rainbow
@@ -49,6 +49,7 @@ $ ./bin/koans
  ```
 
 This command let's you
+
 - `start` from the beginning
 - goto `previous` step
 - show `current` step
@@ -58,13 +59,13 @@ This command let's you
 
 First run in `master` ...
 
-```
+```sh
 $ ./bin/koans run
- ✅  [1/1] MKTKoansTests.TautologyTests/testTautology 
+ ✅  [1/1] MKTKoansTests.TautologyTests/testTautology
  💖  Congratulations all tests passed - ready for the next step?
 ```
 
-Now it's time to learn! 
+Now it's time to learn!
 
 ## License
 
