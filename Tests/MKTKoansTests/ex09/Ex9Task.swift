@@ -8,14 +8,16 @@ import MKTUtils
  * Read about https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419
  */
 
-/**
+/** 
  * Using when expression return,
  * 0     -> NORTH,
  * 1-2   -> SOUTH,
  * 3     -> WEST,
  * 4     -> EAST,
  * 5-6   -> NONE;
- * other -> null
+ * other -> nil
+ *
+ * Note: remember that direction enum is define into the Ex1Task.swift file
  */
 func findMoveUsingInt(_ value:Int) throws -> Direction? {
     return try Todo()
