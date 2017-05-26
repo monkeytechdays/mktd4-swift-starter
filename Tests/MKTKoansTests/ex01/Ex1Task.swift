@@ -37,7 +37,7 @@ import MKTCore
 /**
  * Task 3:
  * Consider that enum. Add a "static" function to find the Direction by the letter.
- * And here is the function : fun from(_ value: String) -> Direction? { return Direction(rawValue:value) }
+ * And here is the function : func from(_ value: String) -> Direction? { return Direction(rawValue:value) }
  *
  * Read about https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html
  */
