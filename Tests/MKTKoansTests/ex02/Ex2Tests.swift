@@ -24,7 +24,7 @@ class Ex02Tests: XCTestCase {
     }
 
     func test03ShouldReturnAPair() throws {
-        let pair = try shouldReturnPairOfIdAndName(Position(1, 2))
+        let pair = try shouldReturnPairOfPosXAndPosY(Position(1, 2))
         XCTAssertEqual(pair._0, 1)
         XCTAssertEqual(pair._1, 2)
     }
