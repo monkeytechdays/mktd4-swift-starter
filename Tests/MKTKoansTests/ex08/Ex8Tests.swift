@@ -29,19 +29,19 @@ class Ex08Tests: XCTestCase {
         try XCTAssertFalse(getPlayersWithScore0(PLAYERS).contains(PLAYER_3))
     }
 
-    func test03AllCustomersAreFromCity() throws {
+    func test03AllPlayersHaveAScore() throws {
         try XCTAssertTrue(checkAllPlayersHaveAScore(PLAYERS))
     }
 
-    func test04AnyCustomerIsFromCity() throws {
+    func test04ContainsPlayerWithScore10() throws {
         try XCTAssertTrue(checkContainsPlayerWithScore10(PLAYERS))
     }
 
-    func test05CountCustomersFromCity() throws {
+    func test05CountPlayersWithScore20() throws {
         try XCTAssertEqual(2, countPlayersWithScore20(PLAYERS))
     }
 
-    func test06AnyCustomerFromCity() throws {
+    func test06AnyPlayerWithScore() throws {
         try XCTAssertEqual(PLAYER_2, findAnyPlayerWithScore(PLAYERS, 20))
         try XCTAssertNil(findAnyPlayerWithScore(PLAYERS, 50))
     }
@@ -60,10 +60,10 @@ class Ex08Tests: XCTestCase {
             ("test00EmptySet", test00EmptySet),
             ("test01EmptyList", test01EmptyList),
             ("test02FilterPlayersWithNot0Scoree", test02FilterPlayersWithNot0Score),
-            ("test03AllCustomersAreFromCity", test03AllCustomersAreFromCity),
-            ("test04AnyCustomerIsFromCity", test04AnyCustomerIsFromCity),
-            ("test05CountCustomersFromCity", test05CountCustomersFromCity),
-            ("test06AnyCustomerFromCity", test06AnyCustomerFromCity),
+            ("test03AllPlayersHaveAScore", test03AllPlayersHaveAScore),
+            ("test04ContainsPlayerWithScore10", test04ContainsPlayerWithScore10),
+            ("test05CountPlayersWithScore20", test05CountPlayersWithScore20),
+            ("test06AnyPlayerWithScore", test06AnyPlayerWithScore),
             ("test07ShouldListPlayersNames", test07ShouldListPlayersNames),
             ("test08ShouldListPlayers", test08ShouldListPlayers)
         ]
